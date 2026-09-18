@@ -269,8 +269,7 @@ Este proyecto fue desarrollado como parte de la evaluación académica de la Uni
 ### 📞 Soporte
 
 Para preguntas o problemas:
-- Crear un issue en el repositorio
-- Contactar a: [email del equipo]
+- Contactar a: juane.quintero23@gmail.com
 
 ---
 
