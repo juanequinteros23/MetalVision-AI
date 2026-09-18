@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #080c14;
+  --bg-secondary: #0d1424;
+  --bg-card: rgba(13, 20, 36, 0.7);
+  --bg-card-hover: rgba(22, 33, 58, 0.85);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(59, 130, 246, 0.3);
+  --border-focus: #3b82f6;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+  --accent-orange: #f97316;
+  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #6366f1 100%);
+  --metal-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --purple: #8b5cf6;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px -10px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 35px rgba(59, 130, 246, 0.25);
+  --font-heading: 'Outfit', sans-serif;
+  --font-main: 'Inter', -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(59, 130, 246, 0.12) 0px, transparent 45%),
+    radial-gradient(at 85% 85%, rgba(6, 182, 212, 0.08) 0px, transparent 45%),
+    radial-gradient(at 50% 50%, rgba(15, 23, 42, 0.5) 0px, transparent 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: var(--shadow-lg);
+}
+
+.glass-card-glow {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Primary Button */
+.btn-primary {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  padding: 12px 26px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.4);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+  filter: brightness(1.08);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Form Inputs */
+.form-input, .form-select {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(13, 20, 36, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: var(--font-main);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-heading);
+}
+
+.badge-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.badge-warning {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.badge-purple {
+  background: rgba(139, 92, 246, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.badge-cyan {
+  background: rgba(6, 182, 212, 0.15);
+  color: #22d3ee;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+}
+
+/* Pulsing Status Dot */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--success);
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Layout container */
+.app-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 30px 24px 70px 24px;
+}
+
+/* Industrial Scanner & HUD Utilities */
+.hero-industrial-backdrop {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(6, 182, 212, 0.15);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 50px;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(8, 12, 20, 0.65) 0%,
+    rgba(8, 12, 20, 0.88) 55%,
+    rgba(8, 12, 20, 0.98) 100%
+  );
+  backdrop-filter: blur(2px);
+  padding: 60px 48px;
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    padding: 36px 20px;
+  }
+}
+
+/* Optical Scanner Viewport with Targeting Reticles */
+.scanner-viewport {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  background: #050811;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Targeting corners */
+.scanner-reticle-tl, .scanner-reticle-tr, .scanner-reticle-bl, .scanner-reticle-br {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  z-index: 5;
+}
+.scanner-reticle-tl { top: 10px; left: 10px; border-top: 2px solid var(--accent-cyan); border-left: 2px solid var(--accent-cyan); }
+.scanner-reticle-tr { top: 10px; right: 10px; border-top: 2px solid var(--accent-cyan); border-right: 2px solid var(--accent-cyan); }
+.scanner-reticle-bl { bottom: 10px; left: 10px; border-bottom: 2px solid var(--accent-cyan); border-left: 2px solid var(--accent-cyan); }
+.scanner-reticle-br { bottom: 10px; right: 10px; border-bottom: 2px solid var(--accent-cyan); border-right: 2px solid var(--accent-cyan); }
+
+/* Laser Scanline Animation */
+.laser-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #06b6d4 50%, #3b82f6 80%, transparent 100%);
+  box-shadow: 0 0 15px #06b6d4, 0 0 30px #3b82f6;
+  z-index: 4;
+  animation: sweepLaser 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes sweepLaser {
+  0% { top: 2%; opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { top: 96%; opacity: 0.7; }
+}
+
+/* Grid overlay */
+.scanner-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* KPI Summary Card */
+.kpi-card {
+  background: rgba(13, 20, 36, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.kpi-icon-wrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   Exploratory Surface Scan Animation (remove.bg style metallurgical scanner)
+   ========================================================================== */
+
+.exploratory-laser-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #06b6d4;
+  box-shadow: 
+    0 0 15px #06b6d4,
+    0 0 30px #06b6d4,
+    0 0 45px rgba(6, 182, 212, 0.8);
+  z-index: 5;
+  animation: sweepLaserVertical 2.6s ease-in-out infinite alternate;
+}
+
+.exploratory-laser-sweep::before {
+  content: '';
+  position: absolute;
+  top: -45px;
+  left: 0;
+  right: 0;
+  height: 45px;
+  background: linear-gradient(to bottom, transparent, rgba(6, 182, 212, 0.28));
+  pointer-events: none;
+}
+
+.exploratory-laser-sweep::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 45px;
+  background: linear-gradient(to top, transparent, rgba(6, 182, 212, 0.28));
+  pointer-events: none;
+}
+
+@keyframes sweepLaserVertical {
+  0% {
+    top: 2%;
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 96%;
+    opacity: 0.9;
+  }
+}
+
+/* Defect Exploration Reticles */
+.defect-reticle-pulse {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 6;
+  pointer-events: none;
+  animation: reticlePulseAnim 2.2s infinite ease-in-out;
+}
+
+.reticle-cross {
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #06b6d4;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+}
+
+.reticle-cross::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -4px;
+  right: -4px;
+  height: 1px;
+  background: #06b6d4;
+  transform: translateY(-50%);
+}
+
+.reticle-cross::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  bottom: -4px;
+  width: 1px;
+  background: #06b6d4;
+  transform: translateX(-50%);
+}
+
+.reticle-label {
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #06b6d4;
+  background: rgba(5, 8, 17, 0.85);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+@keyframes reticlePulseAnim {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+/* Audio wave telemetry bars */
+.audio-wave-bar {
+  width: 3px;
+  height: 100%;
+  background: var(--accent-cyan);
+  border-radius: 2px;
+  animation: waveBarAnim 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes waveBarAnim {
+  0% {
+    height: 3px;
+    opacity: 0.4;
+  }
+  100% {
+    height: 14px;
+    opacity: 1;
+  }
+}
+

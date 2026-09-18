@@ -1,0 +1,49 @@
+{
+  "model": "VGG16",
+  "timestamp": "2026-09-18T02:57:56.344036",
+  "test_metrics": {
+    "loss": 0.015540818683803082,
+    "compile_metrics": 0.9925925731658936
+  },
+  "classification_report": {
+    "cracks_scratches": {
+      "precision": 1.0,
+      "recall": 0.9777777777777777,
+      "f1-score": 0.9887640449438202,
+      "support": 90.0
+    },
+    "flawless_prime": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 45.0
+    },
+    "pitting_corrosion": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 45.0
+    },
+    "surface_inclusions": {
+      "precision": 0.9782608695652174,
+      "recall": 1.0,
+      "f1-score": 0.989010989010989,
+      "support": 90.0
+    },
+    "accuracy": 0.9925925925925926,
+    "macro avg": {
+      "precision": 0.9945652173913043,
+      "recall": 0.9944444444444445,
+      "f1-score": 0.9944437584887023,
+      "support": 270.0
+    },
+    "weighted avg": {
+      "precision": 0.9927536231884058,
+      "recall": 0.9925925925925926,
+      "f1-score": 0.9925916779849364,
+      "support": 270.0
+    }
+  },
+  "phase1_epochs": 15,
+  "phase2_epochs": 10
+}

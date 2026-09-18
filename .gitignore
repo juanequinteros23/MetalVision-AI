@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+backend/venv/
+backend/.env
+
+# Node / Frontend
+client/node_modules/
+client/.env
+client/.env.local
+client/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Heavy ML Models and Weights (>100MB strictly forbidden by GitHub)
+*.keras
+*.h5
+*.weights.h5
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+ml_models/**/*.keras
+ml_models/**/*.h5
+
+# TensorBoard Logs
+*.tfevents.*
+events.out.tfevents.*
+
+# Datasets and Bulk Images (keep code & scripts, exclude raw bulk images)
+data/
+dataset/
+datasets/
+uploads/*
+!uploads/.gitkeep
+
+# Compressed Archives & Bundles
+*.tar.gz
+*.zip
+*.rar
+*.7z
+dist.tar.gz
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Sensitive Keys and Credentials
+*.pem
+*.key
+*.cert
+*.crt
+.env
+.env.*
+
+# Temporary / Scratch
+.system_generated/
+scratch/
+*.log
+
+# Operating System
+.DS_Store
+Thumbs.db
+desktop.ini

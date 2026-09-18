@@ -1,0 +1,17 @@
+[Unit]
+Description=MetalVision AI Backend Service
+After=network.target docker.service
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/metalvision_backend/backend
+Environment="PATH=/home/ubuntu/metalvision_backend/venv/bin:/usr/local/bin:/usr/bin"
+Environment="DATABASE_URL=mysql+pymysql://metalvision_user:password123@127.0.0.1:3306/metalvision_db"
+Environment="FLASK_ENV=production"
+Environment="PORT=5000"
+ExecStart=/home/ubuntu/metalvision_backend/venv/bin/gunicorn --bind 127.0.0.1:5000 --workers 1 --threads 4 --timeout 300 app:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

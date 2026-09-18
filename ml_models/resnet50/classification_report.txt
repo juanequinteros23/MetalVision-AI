@@ -1,0 +1,10 @@
+                    precision    recall  f1-score   support
+
+  cracks_scratches       1.00      1.00      1.00        90
+    flawless_prime       1.00      1.00      1.00        45
+ pitting_corrosion       1.00      0.96      0.98        45
+surface_inclusions       0.98      1.00      0.99        90
+
+          accuracy                           0.99       270
+         macro avg       0.99      0.99      0.99       270
+      weighted avg       0.99      0.99      0.99       270
